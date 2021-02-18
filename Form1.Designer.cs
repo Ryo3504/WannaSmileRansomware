@@ -88,14 +88,14 @@ namespace WannaSmile
 			this.tKey.Location = new System.Drawing.Point(44, 10);
 			this.tKey.Name = "tKey";
 			this.tKey.Size = new System.Drawing.Size(141, 21);
-			this.tKey.TabIndex = 0;
+			this.tKey.TabIndex = 5;
 			// 
 			// btnCheck
 			// 
 			this.btnCheck.Location = new System.Drawing.Point(191, 9);
 			this.btnCheck.Name = "btnCheck";
 			this.btnCheck.Size = new System.Drawing.Size(75, 23);
-			this.btnCheck.TabIndex = 2;
+			this.btnCheck.TabIndex = 6;
 			this.btnCheck.Text = "Send";
 			this.btnCheck.UseVisualStyleBackColor = true;
 			this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);

