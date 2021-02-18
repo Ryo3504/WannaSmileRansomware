@@ -102,12 +102,13 @@ namespace WannaSmile
 		/// </summary>
 		/// <param name="sender">object</param>
 		/// <param name="e">Key Press EventArgs</param>
-		private void btnGetKey_Click(object sender, EventArgs e)
+		private void btnGetKey_KeyUp(object sender, KeyEventArgs e)
 		{
-			//if (e.KeyCode == Keys.Enter)
-			//{
-			//	MessageBox.Show("Use your mouse to click! \r Not your keyboard to click!");
-			//}
+			if (e.KeyCode == Keys.Enter)
+			{
+				MessageBox.Show("We allow you touse your mouse to click! " +
+					"\r Not allow you to use Enter to click!");
+			}
 		}
 
 		/// <summary>
@@ -138,10 +139,6 @@ namespace WannaSmile
 		{
 			MessageBox.Show("Wrong Key and Seri Number!");
 		}
-
-
 		#endregion
-
-
 	}
 }

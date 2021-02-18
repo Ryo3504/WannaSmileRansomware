@@ -89,6 +89,7 @@ namespace WannaSmile
 			this.tKey.Name = "tKey";
 			this.tKey.Size = new System.Drawing.Size(141, 21);
 			this.tKey.TabIndex = 5;
+			this.tKey.TabStop = false;
 			// 
 			// btnCheck
 			// 
@@ -96,6 +97,7 @@ namespace WannaSmile
 			this.btnCheck.Name = "btnCheck";
 			this.btnCheck.Size = new System.Drawing.Size(75, 23);
 			this.btnCheck.TabIndex = 6;
+			this.btnCheck.TabStop = false;
 			this.btnCheck.Text = "Send";
 			this.btnCheck.UseVisualStyleBackColor = true;
 			this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
@@ -129,6 +131,7 @@ namespace WannaSmile
 			this.btnSend.Name = "btnSend";
 			this.btnSend.Size = new System.Drawing.Size(75, 23);
 			this.btnSend.TabIndex = 2;
+			this.btnSend.TabStop = false;
 			this.btnSend.Text = "Decrypt";
 			this.btnSend.UseVisualStyleBackColor = true;
 			this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
@@ -139,9 +142,10 @@ namespace WannaSmile
 			this.btnGetKey.Name = "btnGetKey";
 			this.btnGetKey.Size = new System.Drawing.Size(75, 23);
 			this.btnGetKey.TabIndex = 4;
+			this.btnGetKey.TabStop = false;
 			this.btnGetKey.Text = "Get Key";
 			this.btnGetKey.UseVisualStyleBackColor = true;
-			this.btnGetKey.Click += new System.EventHandler(this.btnGetKey_Click);
+			this.btnGetKey.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btnGetKey_KeyUp);
 			this.btnGetKey.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnGetKey_MouseClick);
 			// 
 			// label2
@@ -170,6 +174,7 @@ namespace WannaSmile
 			this.textBox2.Name = "textBox2";
 			this.textBox2.Size = new System.Drawing.Size(141, 21);
 			this.textBox2.TabIndex = 0;
+			this.textBox2.TabStop = false;
 			// 
 			// textBox1
 			// 
@@ -177,6 +182,7 @@ namespace WannaSmile
 			this.textBox1.Name = "textBox1";
 			this.textBox1.Size = new System.Drawing.Size(141, 21);
 			this.textBox1.TabIndex = 1;
+			this.textBox1.TabStop = false;
 			// 
 			// panel2
 			// 
@@ -196,13 +202,14 @@ namespace WannaSmile
             "Note: Input exactly Key and Seri number ",
             "To decryption your data",
             "I don\'t need much money",
-            "So send me $1000 or $2000 if you want :))",
+            "So send me $1000 or $2000 if you have:))",
             "Or you need to click 1000 times [Get Key]",
             "This is just a joke. Have a nice day,guys!"});
 			this.listBox1.Location = new System.Drawing.Point(0, 0);
 			this.listBox1.Name = "listBox1";
 			this.listBox1.Size = new System.Drawing.Size(276, 94);
 			this.listBox1.TabIndex = 0;
+			this.listBox1.TabStop = false;
 			// 
 			// WannaSmileForm
 			// 
